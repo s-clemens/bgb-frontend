@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/react-loging-lesson.iml" filepath="$PROJECT_DIR$/.idea/react-loging-lesson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/bgb-frontend.iml" filepath="$PROJECT_DIR$/.idea/bgb-frontend.iml" />
     </modules>
   </component>
 </project>

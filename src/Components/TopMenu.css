@@ -1,0 +1,99 @@
+
+.nav-container1{
+    height: 100px;
+    background-color: var(--color-boardgame-black);
+    display: flex;
+    align-items: center;
+}
+
+.nav-container2{
+    margin-top: 5px;
+    width:10%;
+}
+
+.nav-container2 img{
+    height: 80px;
+    padding-left: 20px;
+}
+.nav-container3{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+
+.nav-container3 ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 0;
+}
+
+.nav-container3 ul li{
+    margin-bottom: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+
+    font-size: 20px;
+}
+
+.nav-container4{
+    width:10%;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    align-content: start;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/*nav a:active {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*nav a{*/
+/*color: white;*/
+/*    text-decoration: none;*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+/* nav a:hover{*/
+/*color: #198c89;*/
+/* }*/
+
+
+/*  nav a::before{*/
+/*content:  '';*/
+/*      display: block;*/
+/*      height: 5px;*/
+/*      width: 0%;*/
+/*      background-color: #198c89;*/
+/*      position: absolute;*/
+/*      top:0;*/
+/*      transition: all ease-in-out 250ms;*/
+/*  }*/
+
+/*   nav a:hover::before{*/
+/*width: 100%;*/
+/*   }*/
+
+/*header:after {*/
+/*    content: '';*/
+/*    display: table;*/
+/*    clear: both;*/
+/*}*/
+/*!* nav ul{*!*/
+/*!*margin:0;*!*/
+/*!*     padding: 0;*!*/
+/*!*     list-style: none;*!*/
+/*!*     color: white;*!*/
+/*!* }*!*/
+
+/*  nav li{*/
+/*display: inline-block;*/
+/*      position: relative;*/
+/*  }*/
+
