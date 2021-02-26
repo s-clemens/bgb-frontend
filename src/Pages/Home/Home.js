@@ -13,7 +13,7 @@ function Home() {
         <Page>
             <div className="page-container">
                 <Pagetitle>BOARDGAME BUNKER</Pagetitle>
-                <LineBreak height={'5px'} width={'80%'} color={'black'} >""</LineBreak>
+                <LineBreak width={'80%'} color={'black'} >""</LineBreak>
                 <Image banaan={'home-image-container'} id={'image-couple-playing'} src={foto} borderradius={'15px'} />
                 <ContentContainer id={'homepage-tekst'}>
                     <p>
@@ -35,7 +35,9 @@ function Home() {
                     </p>
                     <br/>
                     <p>
-                        Klik HIER om ons aanbod te zien.
+                        Helaas is het zo dat we gedurende de huidige COVID-19 maatregelen geen reserveringen aan mogen
+                        nemen. <br/>Je kunt wel in de tussentijd een kijkje nemen naar ons aanbod voor als we weer open
+                        mogen! Klik daarvoor HIER.
                     </p>
                 </ContentContainer>
             </div>

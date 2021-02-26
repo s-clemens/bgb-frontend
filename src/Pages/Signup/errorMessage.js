@@ -4,15 +4,17 @@ export default function ErrorMessage({ error }) {
     if (error) {
         switch (error.type) {
             case "required":
-                return <p className={'input-error'}>This is required</p>;
+                return <p className={'input-error'}>Dit is een vereist veld.</p>;
             case "minLength":
-                return <p>Your last name need minmium 2 charcaters</p>;
+                return <p className={'input-error'}>Dit veld dient ten minste 2 karakters langs te zijn.</p>;
             case "pattern":
-                return <p>Enter a valid email address</p>;
+                return <p className={'input-error'}>Enter a valid email address</p>;
             case "min":
-                return <p>Minmium age is 18</p>;
+                return <p className={'input-error'}>Minmium age is 18</p>;
             case "validate":
-                return <p>Username is already used</p>;
+                return <p className={'input-error'}>Username is already used</p>;
+            case "maxLength":
+                return <p className={'input-error'}>Dit veld mag maar 50 karakters lang zijn.</p>;
             default:
                 return null;
         }

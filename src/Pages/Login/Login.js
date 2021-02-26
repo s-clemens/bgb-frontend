@@ -70,7 +70,7 @@ function Login() {
 
                 <Pagetitle>INLOGGEN</Pagetitle>
 
-                <LineBreak height={'5px'} width={'80%'} color={'black'} >""</LineBreak>
+                <LineBreak width={'80%'} color={'black'} >""</LineBreak>
 
                 <ContentContainer id={'login-container'}>
 

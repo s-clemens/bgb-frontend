@@ -1,0 +1,13 @@
+textarea{
+    resize: none;
+}
+
+label {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+select{
+    margin-top: 5px;
+    width: 200px;
+}

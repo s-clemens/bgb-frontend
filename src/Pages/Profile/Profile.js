@@ -24,7 +24,7 @@ function Profile() {
         <Page>
             <div className="page-container">
                 <Pagetitle>DASHBOARD</Pagetitle>
-                <LineBreak height={'5px'} width={'80%'} color={'black'} >""</LineBreak>
+                <LineBreak width={'80%'} color={'black'} >""</LineBreak>
 
                 <ContentContainer id={'dashboard-container'}>
                     <p className={"important-text"}>Welkom {user.username}, op je persoonlijke dashboard.</p>
