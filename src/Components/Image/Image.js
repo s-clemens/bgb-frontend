@@ -1,9 +1,12 @@
 import React from "react";
 import "./Image.css";
 
-const Image = ({ width, height, borderRadius, src}) => {
+const Image = ({src}) => {
 
     return(
-        <img borderradius={} width={} height={} src={}  />
+        <div className='image-container'>
+            <img className='image-component' src={src}  />
+        </div>
     )
 }
+export default Image;

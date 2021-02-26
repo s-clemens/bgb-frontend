@@ -4,6 +4,9 @@ import { useState } from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Page from "../../Components/Page";
+import ReactDOM from "react-dom";
+
+
 
 // const endpointLink = 'https://polar-lake-14365.herokuapp.com/api/auth/signup'
 
@@ -68,12 +71,17 @@ function Signup() {
                     </label>
                     <br/>
                     <label htmlFor="details-username">
-                        Username:<br/>
+                        Gebruikersnaam:<br/>
                         <input type="text" name="username" id="details-username" ref={register}/>
                     </label>
                     <br/>
+                    <label htmlFor="details-phonenumber">
+                        Telefoon nummer:<br/>
+                        <input type="text" name="phonenumber" id="details-phonenumber" ref={register}/>
+                    </label>
+                    <br/>
                     <label htmlFor="details-password">
-                        Password:<br/>
+                        Wachtwoord:<br/>
                         <input type="text" name="password" id="details-password" ref={register}/>
                     </label>
                     <br/>

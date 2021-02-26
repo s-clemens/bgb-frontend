@@ -29,7 +29,7 @@ function TopMenu() {
                                 </li>
 
                                 <li>
-                                <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/sign-in">CONTACT</NavLink>
+                                <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/sign-in">AANBOD</NavLink>
                                 </li>
                                 {isAuthenticated ?
                                     (<li>
