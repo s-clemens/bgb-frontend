@@ -1,11 +1,11 @@
 import React from "react";
 import "./Image.css";
 
-const Image = ({src}) => {
+const Image = ({src, banaan, id}) => {
 
     return(
-        <div className='image-container'>
-            <img className='image-component' src={src}  />
+        <div className={banaan}>
+            <img id={id} src={src}  />
         </div>
     )
 }

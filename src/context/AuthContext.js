@@ -15,21 +15,6 @@ function AuthContextProvider({ children }) {
         user: null,
     })
 
-    // useEffect( () => {
-    //     // Haal uit de local storage de JWT Token
-    //     const token = localStorage.getItem('token')
-    //     // Als die er niet is kunnen we gewoon verder
-    //     // Als die er wel is dan betekent dat de applicatie herstart is
-    //     // En dan willen we nog even onze gebruikersdata (username, etc) ophalen.
-    //     setTimeout(() => {
-    //         // er is geen token, dus we beginnen met een schone lei!
-    //         setAuthState({
-    //             ...authState,
-    //             status: 'done',
-    //         })
-    //     }, 2000)
-    // }, []);
-
     useEffect(() => {
         const token = localStorage.getItem('token');
 
@@ -138,11 +123,27 @@ function useAuthState(){
     // En als er een gebruiker in de authState staat
     const isDone = authState.status === 'done';
     const isAuthenticated = authState.user !== null && isDone;
+
+    // Const voor checken of gebruiker admin is.
+    let isAdmin = false;
+    if (authState.user !== null){
+        for (let i = 0; i < authState.user.roles.length; i++) {
+            if (authState.user.roles[i] === "ROLE_ADMIN"){
+                isAdmin = true;
+            }
+        }
+
+        if (authState.user.roles[1] === "ROLE_ADMIN"){
+            isAdmin = true;
+        }
+    }
     console.log('Ik ben Authenticated:', isAuthenticated);
+    console.log('Ik ben een admin:', isAdmin)
 
     return{
         ...authState,
         isAuthenticated: isAuthenticated,
+        isAdmin: isAdmin,
     }
 }
 

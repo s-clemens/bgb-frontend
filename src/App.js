@@ -6,6 +6,7 @@ import Profile from './Pages/Profile/Profile';
 import Signup from './Pages/Signup/Signup';
 import TopMenu from "./Components/TopMenu";
 import {useAuthState} from "./context/AuthContext";
+import ProductAdd from "./Pages/ProductAdd/ProductAdd";
 
 // Methode voor private route als de gebruiker vaker gecheckt moet worden.
 function PrivateRoute({ children, ...rest}) {
@@ -18,10 +19,20 @@ function PrivateRoute({ children, ...rest}) {
     );
 }
 
+function AdminRoute({ children, ...rest}) {
+    const { isAdmin } = useAuthState();
+
+    return (
+        <Route { ...rest } render={() => {
+            return isAdmin ? children : <Redirect to="/"/>
+        }}/>
+    );
+}
+
 
 function App() {
 
-    // const { isAuthenticated } = useAuthState();
+    const { isAuthenticated } = useAuthState();
 
 
   return (
@@ -35,13 +46,11 @@ function App() {
             <Route path="/sign-in">
                 <Login />
             </Route>
-            {/*<Route path="/profile">*/}
-            {/*    /!*Als de gebruiker is ingelogd dan willen we profile laten zien*!/*/}
-            {/*    /!*Als de gebruikers niet is ingelogd, dan willen we redirecten.*!/*/}
-            {/*    { isAuthenticated ? (<Profile/>) : (<Redirect to="/sign-in"/>)}*/}
-            {/*</Route>*/}
+            <AdminRoute exact path="/add-product">
+                <ProductAdd />
+            </AdminRoute>
             <PrivateRoute exact path="/profile">
-                <Profile/>
+                <Profile />
             </PrivateRoute>
             <Route path="/sign-up">
                 <Signup />

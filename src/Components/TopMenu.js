@@ -29,11 +29,11 @@ function TopMenu() {
                                 </li>
 
                                 <li>
-                                <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/sign-in">AANBOD</NavLink>
+                                <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/">AANBOD</NavLink>
                                 </li>
                                 {isAuthenticated ?
                                     (<li>
-                                        <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/sign-in">PROFIEL</NavLink>
+                                        <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/profile">DASHBOARD</NavLink>
                                     </li>)
                                     : (
                                     <li>

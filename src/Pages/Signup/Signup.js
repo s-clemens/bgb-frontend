@@ -4,11 +4,7 @@ import { useState } from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
 import Page from "../../Components/Page";
-import ReactDOM from "react-dom";
 
-
-
-// const endpointLink = 'https://polar-lake-14365.herokuapp.com/api/auth/signup'
 
 const endpointLink = 'http://localhost:8080/api/auth/signup'
 
@@ -24,6 +20,7 @@ function Signup() {
 
     // Als form word submit, dan runt deze functie
     async function onFormSubmit(data){
+        console.log(data)
         toggleLoading(true)
         setError('')
         try {
@@ -31,7 +28,7 @@ function Signup() {
                 username: data.username,
                 email: data.email,
                 password: data.password,
-                role: ["user"],
+                phonenumber: data.phonenumber,
             });
             console.log("De volgende data is verstuurd:")
             console.log(response.data)

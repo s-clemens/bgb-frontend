@@ -1,22 +1,32 @@
-.image-component {
+/*Home page*/
+
+#image-couple-playing {
     height: 1000px;
     margin-left: -275px;
     margin-top: -500px;
     padding: 0px;
 }
 
-.image-container {
-    /*border-radius: 10px;*/
-    /*object-fit: fill;*/
-    /*height: 200px;*/
-    /*width: 50%;*/
+.home-image-container{
     border-radius: 10px;
     margin: 20px auto 0;
     height: 200px;
     width: 800px;
     object-fit: scale-down;
     overflow: hidden;
-    /*border-width: 1px;*/
-    /*border-color: grey;*/
-    /*border-style: solid;*/
+}
+
+/*Login page*/
+
+.login-image-container {
+    object-fit: scale-down;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#shield-svg {
+    margin: auto auto;
+    height: 200px;
+    max-height: 100%;
 }
