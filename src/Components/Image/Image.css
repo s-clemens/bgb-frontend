@@ -1,5 +1,3 @@
-/*Home page*/
-
 #image-couple-playing {
     height: 1000px;
     margin-left: -275px;
@@ -15,8 +13,6 @@
     object-fit: scale-down;
     overflow: hidden;
 }
-
-/*Login page*/
 
 .login-image-container {
     object-fit: scale-down;

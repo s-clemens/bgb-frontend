@@ -3,7 +3,6 @@ import "./ContentContainer.css";
 
 const ContentContainer = ({ id, children }) => {
 
-
     return(
         <div className={'content-container'} id={id}>
             { children }

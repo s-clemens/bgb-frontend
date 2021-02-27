@@ -6,19 +6,14 @@ export default function ErrorMessage({ error }) {
             case "required":
                 return <p className={'input-error'}>Dit is een vereist veld.</p>;
             case "minLength":
-                return <p className={'input-error'}>Dit veld dient ten minste 2 karakters langs te zijn.</p>;
+                return <p className={'input-error'}>Dit veld dient meer karakters te hebben.</p>;
             case "pattern":
-                return <p className={'input-error'}>Enter a valid email address</p>;
-            case "min":
-                return <p className={'input-error'}>Minmium age is 18</p>;
-            case "validate":
-                return <p className={'input-error'}>Username is already used</p>;
+                return <p className={'input-error'}>Vul een geldig e-mail adres in.</p>;
             case "maxLength":
                 return <p className={'input-error'}>Dit veld mag maar 50 karakters lang zijn.</p>;
             default:
                 return null;
         }
     }
-
     return null;
 }

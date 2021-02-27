@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./DashboardItem.css";
 import {NavLink} from "react-router-dom";
-
 
 const DashboardItem = ({name, path, icon}) => {
 
@@ -19,7 +18,6 @@ const DashboardItem = ({name, path, icon}) => {
             </NavLink>
         </>
     )
-
 }
 
 export default DashboardItem;

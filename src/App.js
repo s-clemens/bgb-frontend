@@ -7,8 +7,8 @@ import Signup from './Pages/Signup/Signup';
 import TopMenu from "./Components/TopMenu";
 import {useAuthState} from "./context/AuthContext";
 import ProductAdd from "./Pages/ProductAdd/ProductAdd";
+import Offer from "./Pages/Offer/Offer";
 
-// Methode voor private route als de gebruiker vaker gecheckt moet worden.
 function PrivateRoute({ children, ...rest}) {
     const { isAuthenticated } = useAuthState();
 
@@ -29,11 +29,7 @@ function AdminRoute({ children, ...rest}) {
     );
 }
 
-
 function App() {
-
-    const { isAuthenticated } = useAuthState();
-
 
   return (
       <>
@@ -55,6 +51,9 @@ function App() {
             <Route path="/sign-up">
                 <Signup />
             </Route>
+              <Route path="/offer">
+                  <Offer />
+              </Route>
           </Switch>
       </>
   );

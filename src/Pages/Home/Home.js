@@ -6,7 +6,6 @@ import Image from "../../Components/Image/Image";
 import foto from "../../images/Couple at a table-edited.jpg"
 import ContentContainer from "../../Components/contentcontainer/ContentContainer"
 
-
 function Home() {
 
     return (

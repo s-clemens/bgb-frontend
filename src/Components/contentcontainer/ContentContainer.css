@@ -1,4 +1,3 @@
-
 .content-container {
     background-color: #fafafa;
     padding: 30px;
@@ -18,6 +17,7 @@
     height: 300px;
     margin: 20px auto 0;
     display: flex;
+    flex-direction: row;
 }
 
 #login-container a{
@@ -42,7 +42,37 @@
     flex-direction: column;
 }
 
+.content-container {
+    width: 70%;
+    height: auto;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
 
 #dashboard-container p{
     margin-left: 10px;
+}
+
+#offer-container{
+    width: 70%;
+    height: auto;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#offer-container p{
+    margin-left: 10px;
+}
+
+#offer-container a{
+    color: black;
+    font-weight: bold;
+}
+
+#signup-container {
+    display: flex;
+    flex-direction: row;
 }

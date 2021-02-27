@@ -8,7 +8,6 @@
     border-style: solid;
     border-radius: 10px;
     margin: 5px;
-
 }
 
 .dashboard-item-icon {
@@ -22,10 +21,7 @@
     margin: auto auto;
     height: 200px;
     max-height: 90%;
-
 }
-
-
 
 .dashboard-item-name {
     width: 100%;

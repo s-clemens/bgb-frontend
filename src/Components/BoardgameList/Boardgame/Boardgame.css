@@ -1,0 +1,63 @@
+.boardgame-item {
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    background-color: #fafafa;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-color: #dfdfdf;
+    border-width: 2px;
+    border-style: solid;
+    font-size: 12px;
+}
+
+.boardgame-item-container1 {
+    width: 180px;
+    display: flex;
+    border-right-style: solid;
+    border-right-color: #dfdfdf;
+}
+
+.boardgame-item-container1 img {
+    height: 100px;
+    width: 100px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.boardgame-item-container2 {
+    width: 50%;
+    height: 100%;
+    border-right-style: solid;
+    border-right-color: #dfdfdf;
+}
+
+.boardgame-item-container2 ul{
+    margin-top: 10px;
+    list-style: none;
+}
+
+.boardgame-item-container2 li{
+    list-style: none;
+    margin-left: -20px;
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+.boardgame-item-container2 li .right{
+margin-left: 5px;
+}
+
+.boardgame-item-container2 li .left{
+    font-weight: bold;
+}
+
+.boardgame-item-container3 .head{
+    font-weight: bold;
+}
+
+.boardgame-item-container3 {
+    margin-top: 10px;
+    width: 50%;
+    height: 100%;
+}

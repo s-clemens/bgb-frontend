@@ -1,13 +1,109 @@
-textarea{
-    resize: none;
+#product-info-container1{
+    display: flex;
+    flex-direction: row;
 }
 
-label {
-    display: inline-block;
-    margin-top: 15px;
+#product-info-container2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-select{
+#product-info-container2 input{
+    border-style: solid;
+    border-color: var(--color-boardgame-black);
+    border-width: 1px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#product-info-container2 label{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#product-info-container2 select{
+    font-size: 12px;
+    font-weight: bold;
+    border: solid;
+    border-color: var(--color-boardgame-black);
+    border-radius: 5px;
+    box-sizing: content-box;
+    border-width: 1px;
     margin-top: 5px;
     width: 200px;
+}
+
+#product-info-container3{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.preview-image{
+    width: 100px;
+    height: 100px;
+}
+
+#image-upload-notify {
+    font-size: 8px;
+}
+
+.extra-product-information-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.extra-product-information-box input{
+    border-style: solid;
+    border-color: var(--color-boardgame-black);
+    border-width: 1px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.extra-product-information-box label{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.extra-product-information-box select{
+    font-size: 12px;
+    font-weight: bold;
+    border: solid;
+    border-color: var(--color-boardgame-black);
+    border-radius: 5px;
+    box-sizing: content-box;
+    border-width: 1px;
+    margin-top: 5px;
+    width: 200px;
+}
+
+.extra-product-information-box textarea{
+    font-size: 12px;
+    font-weight: bold;
+    border: solid;
+    border-color: var(--color-boardgame-black);
+    border-radius: 5px;
+    box-sizing: content-box;
+    border-width: 1px;
+    margin-top: 5px;
+    width: 200px;
+    height: 100px;
+}
+
+.extra-product-information-box button{
+    font-size: 12px;
+    font-weight: bold;
+    border: solid;
+    border-color: var(--color-boardgame-black);
+    border-radius: 5px;
+    box-sizing: content-box;
+    border-width: 1px;
+    margin-top: 20px;
+    width: 100px;
+    margin-left: 50px;
 }

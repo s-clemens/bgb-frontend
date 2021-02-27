@@ -1,0 +1,18 @@
+.signup-container-part1 {
+    width: 50%;
+}
+
+.signup-container-part2{
+    width: 50%;
+}
+
+.signup-container-part2 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.signup-container-part1 a{
+    font-weight: bold;
+    color: var(--color-boardgame-black);
+}

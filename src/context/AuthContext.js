@@ -1,9 +1,5 @@
-// We willen in de context bijhouden of we op dit moment:
-// Gebruikersdata hebben
-// en of de gebruiker geautoriseerd is om data te mogen bekijken.
-
 import React, {createContext, useContext, useEffect, useState} from 'react';
-import axios from "axios";
+import axios from "axios"
 
 const AuthContext = createContext({})
 
@@ -16,13 +12,11 @@ function AuthContextProvider({ children }) {
     })
 
     useEffect(() => {
+        
         const token = localStorage.getItem('token');
-
         async function getUserInfo() {
+
             try {
-                console.log("banaan")
-                console.log(token)
-                // We kunnen de gebruikersdata ophalen omdat we onszelf authenticeren met de token
                 const response = await axios.get('http://localhost:8080/api/auth/token-check', {
                         headers: {
                             "Content-Type": "application/json",
@@ -30,23 +24,18 @@ function AuthContextProvider({ children }) {
                         },
                     }
                 );
-                console.log("banaan2")
-
-                console.log(response);
-
-                // met het resultaat vullen we de context
                 setAuthState({
                     ...authState,
                     user: {
-                        id: response.id,
-                        username: response.username,
-                        email: response.email,
+                        id: response.data.id,
+                        username: response.data.username,
+                        email: response.data.email,
+                        roles: response.data.roles
                     },
                     status: 'done',
                 });
 
             } catch (e) {
-                // Gaat er toch iets mis? Dan zetten we de error in de context
                 setAuthState({
                     ...authState,
                     user: null,
@@ -56,12 +45,9 @@ function AuthContextProvider({ children }) {
             }
         }
 
-        // als we GEEM userinformatie meer in de applicatie hebben, maar er staat WEL een token in
-        // local storage, gaan we handmatig de gebuikersdata ophalen door de getUserInfo functie van hierboven aan te roepen
         if (authState.user === null && token) {
             getUserInfo();
         } else {
-            // Als er geen ingelogde gebruiker hoeft te zijn, zetten we de context naar de basis state
             setAuthState({
                 ...authState,
                 error: null,
@@ -71,13 +57,9 @@ function AuthContextProvider({ children }) {
         }
     }, []);
 
-
-    // de token willen we in de local storage zetten
     function login(data) {
-        console.log(data)
         localStorage.setItem('token', data.accessToken)
 
-        // de user-info willen we in de context zetten
         setAuthState({
             ...authState,
             user: {
@@ -86,30 +68,23 @@ function AuthContextProvider({ children }) {
                 roles: data.roles,
             }
         })
-
     }
 
     function logout(){
-        // 1. Maak local storage leeg
         localStorage.clear();
-        // 2. Haal de user uit de context-state.
         setAuthState({
             ...authState,
             user: null,
         })
-
     }
 
-    // De ... zorgt ervoor dat hij gaat kijken naar wat authState is, als je dit niet doet overschrijft hij de data
     const providerData = {
         ...authState,
         login,
         logout,
-        // logout, (functie zit er nog niet in)
     }
 
     return(
-        // Checkt of de Autstate done of pending is, als done dan laat hij de app zien, anders loading..
         <AuthContext.Provider value={providerData}>
             {authState.status === 'done' && children}
             {authState.status === 'pending' && <p>Loading..</p>}
@@ -119,26 +94,20 @@ function AuthContextProvider({ children }) {
 
 function useAuthState(){
     const authState = useContext(AuthContext);
-    // Iemand is geauthoriseerd wanneer de status === 'done'
-    // En als er een gebruiker in de authState staat
     const isDone = authState.status === 'done';
     const isAuthenticated = authState.user !== null && isDone;
-
-    // Const voor checken of gebruiker admin is.
     let isAdmin = false;
+
     if (authState.user !== null){
         for (let i = 0; i < authState.user.roles.length; i++) {
             if (authState.user.roles[i] === "ROLE_ADMIN"){
                 isAdmin = true;
             }
         }
-
         if (authState.user.roles[1] === "ROLE_ADMIN"){
             isAdmin = true;
         }
     }
-    console.log('Ik ben Authenticated:', isAuthenticated);
-    console.log('Ik ben een admin:', isAdmin)
 
     return{
         ...authState,
@@ -147,7 +116,6 @@ function useAuthState(){
     }
 }
 
-// Exports so it can be imported by other files
 export {
     AuthContext,
     useAuthState,

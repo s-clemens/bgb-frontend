@@ -1,6 +1,4 @@
 .linebreak{
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     background-color: var(--color-boardgame-black);
 }
-

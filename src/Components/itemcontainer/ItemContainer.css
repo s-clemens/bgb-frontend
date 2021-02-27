@@ -14,3 +14,21 @@
     flex-wrap: wrap;
 }
 
+#offer-item-container {
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#offer-item-boardgame-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+#offer-item-consumable-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}

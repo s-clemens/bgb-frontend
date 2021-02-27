@@ -1,0 +1,19 @@
+.dashboard-top-box1{
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-top-box2{
+    width: 100%;
+}
+
+.dashboard-top-box3{
+    display: flex;
+}
+
+.dashboard-top-box3 button{
+    width: 100px;
+    background-color: var(--color-boardgame-black);
+    color: white;
+    border-radius: 5px;
+}
