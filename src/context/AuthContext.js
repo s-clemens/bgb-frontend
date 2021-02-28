@@ -41,6 +41,7 @@ function AuthContextProvider({ children }) {
                     },
                     status: 'done',
                 });
+                setAdmin(response.data.roles)
 
             } catch (e) {
                 setAuthState({

@@ -8,6 +8,7 @@
     border-style: solid;
     border-radius: 10px;
     margin: 5px;
+    overflow: hidden;
 }
 
 .dashboard-item-icon {
@@ -28,6 +29,7 @@
     height: 20%;
     align-self: flex-end;
     background-color: var(--color-boardgame-black);
+    margin-bottom: -10px;
 }
 
 .dashboard-item-name p {
