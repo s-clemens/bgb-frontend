@@ -3,16 +3,21 @@ import axios from "axios"
 
 const AuthContext = createContext({})
 
+
 function AuthContextProvider({ children }) {
+
+    // const { user, isAdmin } = useAuthState()
 
     const [authState, setAuthState] = useState({
         status: 'pending',
         error: null,
         user: null,
     })
+    const [admin, setAdmin ] = useState(false);
+
 
     useEffect(() => {
-        
+
         const token = localStorage.getItem('token');
         async function getUserInfo() {
 
@@ -24,6 +29,8 @@ function AuthContextProvider({ children }) {
                         },
                     }
                 );
+                console.log(response)
+
                 setAuthState({
                     ...authState,
                     user: {
@@ -66,8 +73,9 @@ function AuthContextProvider({ children }) {
                 username: data.username,
                 email: data.email,
                 roles: data.roles,
-            }
+            },
         })
+        isAdmin(data.roles);
     }
 
     function logout(){
@@ -76,12 +84,26 @@ function AuthContextProvider({ children }) {
             ...authState,
             user: null,
         })
+        setAdmin(false);
+    }
+
+    function isAdmin(data){
+        if ( data[0].includes("ROLE_ADMIN")) {
+            setAdmin(true);
+        } else {
+            setAdmin(false);
+        }
+    }
+
+    function getAdmin() {
+        return admin;
     }
 
     const providerData = {
         ...authState,
         login,
         logout,
+        getAdmin
     }
 
     return(
@@ -96,23 +118,10 @@ function useAuthState(){
     const authState = useContext(AuthContext);
     const isDone = authState.status === 'done';
     const isAuthenticated = authState.user !== null && isDone;
-    let isAdmin = false;
-
-    if (authState.user !== null){
-        for (let i = 0; i < authState.user.roles.length; i++) {
-            if (authState.user.roles[i] === "ROLE_ADMIN"){
-                isAdmin = true;
-            }
-        }
-        if (authState.user.roles[1] === "ROLE_ADMIN"){
-            isAdmin = true;
-        }
-    }
 
     return{
         ...authState,
         isAuthenticated: isAuthenticated,
-        isAdmin: isAdmin,
     }
 }
 

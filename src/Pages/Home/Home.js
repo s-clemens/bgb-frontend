@@ -5,6 +5,7 @@ import LineBreak from "../../Components/LineBreak/LineBreak";
 import Image from "../../Components/Image/Image";
 import foto from "../../images/Couple at a table-edited.jpg"
 import ContentContainer from "../../Components/contentcontainer/ContentContainer"
+import {NavLink} from "react-router-dom";
 
 function Home() {
 
@@ -36,7 +37,7 @@ function Home() {
                     <p>
                         Helaas is het zo dat we gedurende de huidige COVID-19 maatregelen geen reserveringen aan mogen
                         nemen. <br/>Je kunt wel in de tussentijd een kijkje nemen naar ons aanbod voor als we weer open
-                        mogen! Klik daarvoor HIER.
+                        mogen! <br/>Klik daarvoor <NavLink to={"/offer"}>HIER</NavLink>.
                     </p>
                 </ContentContainer>
             </div>

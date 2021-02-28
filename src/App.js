@@ -5,12 +5,15 @@ import Login from './Pages/Login/Login';
 import Profile from './Pages/Profile/Profile';
 import Signup from './Pages/Signup/Signup';
 import TopMenu from "./Components/TopMenu";
-import {useAuthState} from "./context/AuthContext";
+import {AuthContext, useAuthState} from "./context/AuthContext";
 import ProductAdd from "./Pages/ProductAdd/ProductAdd";
 import Offer from "./Pages/Offer/Offer";
+import {useContext} from "react";
 
 function PrivateRoute({ children, ...rest}) {
     const { isAuthenticated } = useAuthState();
+
+
 
     return (
         <Route { ...rest } render={() => {
@@ -20,11 +23,11 @@ function PrivateRoute({ children, ...rest}) {
 }
 
 function AdminRoute({ children, ...rest}) {
-    const { isAdmin } = useAuthState();
+    const { getAdmin } = useContext(AuthContext)
 
     return (
         <Route { ...rest } render={() => {
-            return isAdmin ? children : <Redirect to="/"/>
+            return getAdmin() ? children : <Redirect to="/"/>
         }}/>
     );
 }

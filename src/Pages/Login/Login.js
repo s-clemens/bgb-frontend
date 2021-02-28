@@ -18,7 +18,7 @@ const endpointLink = 'http://localhost:8080/api/auth/signin'
 
 function Login() {
     const { login } = useContext(AuthContext)
-    const { isAuthenticated } = useAuthState()
+    const { isAuthenticated, isAdmin } = useAuthState()
     const [submitError, setSubmitError] = useState('');
     const history = useHistory();
     const { handleSubmit, register, errors, setError, clearError} = useForm();

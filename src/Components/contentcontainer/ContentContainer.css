@@ -76,3 +76,8 @@
     display: flex;
     flex-direction: row;
 }
+
+#homepage-tekst a {
+    color: var(--color-boardgame-black);
+    font-weight: bold;
+}

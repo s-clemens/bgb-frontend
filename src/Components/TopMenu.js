@@ -6,7 +6,8 @@ import "./TopMenu.css";
 
 function TopMenu() {
 
-    const { isAuthenticated, user } = useAuthState();
+    const { isAuthenticated } = useAuthState();
+
 
     return (
         <>
@@ -23,11 +24,11 @@ function TopMenu() {
                                     </NavLink>
                                 </li>
 
-                                <li>
-                                    <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/sign-up">
-                                        RESERVEREN
-                                    </NavLink>
-                                </li>
+                                {/*<li>*/}
+                                {/*    <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/sign-up">*/}
+                                {/*        RESERVEREN*/}
+                                {/*    </NavLink>*/}
+                                {/*</li>*/}
 
                                 <li>
                                 <NavLink activeStyle={{textDecoration: 'underline'}} exact to="/offer">

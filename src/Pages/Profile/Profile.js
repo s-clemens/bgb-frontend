@@ -16,8 +16,8 @@ import bookIcon from "../../images/icons/reader-icon.svg";
 import "./Profile.css";
 
 function Profile() {
-    const { user, isAdmin } = useAuthState()
-    const { logout } = useContext(AuthContext)
+    const { user } = useAuthState()
+    const { logout, getAdmin } = useContext(AuthContext)
 
     return (
         <Page>
@@ -29,7 +29,9 @@ function Profile() {
                     <div className={'dashboard-top-box1'}>
                         <div className={'dashboard-top-box2'}>
                             <p className={"important-text"}>Welkom {user.username}, op je persoonlijke dashboard.</p>
-                            <p className={'small-text'}>Selecteer een van de onderstaande opties om verder te gaan.</p>
+                            <p className={'small-text'}>Selecteer een van de onderstaande opties om verder te gaan.<br/>
+                            Vanwege de verplichte sluiting vanwege COVID-19 kan het zijn dat sommige functies niet werken.
+                            </p>
                         </div>
 
                         <div className={'dashboard-top-box3'}>
@@ -40,25 +42,25 @@ function Profile() {
                     <ItemContainer id={'dashboard-item-container'}>
 
                         {/*If auth received used is admin then show:*/}
-                        {isAdmin ? (<DashboardItem icon={productIcon} name={'PRODUCT TOEVOEGEN'} path={'/add-product'}/>)
+                        {getAdmin() ? (<DashboardItem icon={productIcon} name={'PRODUCT TOEVOEGEN'} path={'/add-product'}/>)
                             : (<span/>)}
-                        {isAdmin ? (<DashboardItem icon={productIcon} name={'PRODUCT UPDATEN'} path={'/'}/>)
+                        {getAdmin() ? (<DashboardItem icon={productIcon} name={'PRODUCT UPDATEN'} path={'/'}/>)
                             : (<span/>)}
-                        {isAdmin ? (<DashboardItem icon={covidIcon} name={'COVID MAATREGELEN'} path={'/'}/>)
+                        {getAdmin() ? (<DashboardItem icon={covidIcon} name={'COVID MAATREGELEN'} path={'/'}/>)
                             : (<span/>)}
-                        {isAdmin ? (<DashboardItem icon={calendarIcon} name={'BOOKINGEN BEKIJKEN'} path={'/'}/>)
+                        {getAdmin() ? (<DashboardItem icon={calendarIcon} name={'BOOKINGEN BEKIJKEN'} path={'/'}/>)
                             : (<span/>)}
-                        {isAdmin ? (<DashboardItem icon={calendarCancelIcon} name={'BOOKING ANNULEREN'} path={'/'}/>)
+                        {getAdmin() ? (<DashboardItem icon={calendarCancelIcon} name={'BOOKING ANNULEREN'} path={'/'}/>)
                             : (<span/>)}
-                        {isAdmin ? (<DashboardItem icon={bookIcon} name={'GASTENLIJSTEN'} path={'/'}/>)
+                        {getAdmin() ? (<DashboardItem icon={bookIcon} name={'GASTENLIJSTEN'} path={'/'}/>)
                             : (<span/>)}
 
                         {/*If auth recevied user is user then show:*/}
-                        {!isAdmin ? (<DashboardItem icon={calendarAddIcon} name={'BOOKING MAKEN'} path={'/'}/>)
+                        {!getAdmin() ? (<DashboardItem icon={calendarAddIcon} name={'BOOKING MAKEN'} path={'/'}/>)
                             : (<span/>)}
-                        {!isAdmin ? (<DashboardItem icon={calendarIcon} name={'BOOKING BEKIJKEN'} path={'/'}/>)
+                        {!getAdmin() ? (<DashboardItem icon={calendarIcon} name={'BOOKING BEKIJKEN'} path={'/'}/>)
                             : (<span/>)}
-                        {!isAdmin ? (<DashboardItem icon={phoneIcon} name={'CONTACT'} path={'/'}/>)
+                        {!getAdmin() ? (<DashboardItem icon={phoneIcon} name={'CONTACT'} path={'/'}/>)
                             : (<span/>)}
 
                     </ItemContainer>
